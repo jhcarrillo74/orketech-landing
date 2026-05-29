@@ -9,6 +9,7 @@ import Proyectos from './sections/Proyectos';
 import ComoTrabajo from './sections/ComoTrabajo';
 import QuienSoy from './sections/QuienSoy';
 import Contacto from './sections/Contacto';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <QuienSoy />
         <Contacto />
       </main>
+      <Footer />
     </div>
   );
 }
