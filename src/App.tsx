@@ -7,6 +7,7 @@ import Servicios from './sections/Servicios';
 import CasosUso from './sections/CasosUso';
 import Proyectos from './sections/Proyectos';
 import ComoTrabajo from './sections/ComoTrabajo';
+import QuienSoy from './sections/QuienSoy';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <CasosUso />
         <Proyectos />
         <ComoTrabajo />
+        <QuienSoy />
       </main>
     </div>
   );
