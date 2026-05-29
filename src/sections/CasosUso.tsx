@@ -1,4 +1,5 @@
 import { DollarSign, Settings, FileText, Monitor } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const casos = [
   {
@@ -24,12 +25,23 @@ const casos = [
 ];
 
 const CasosUso = () => {
+  const { ref, inView } = useInView();
+
   return (
-    <section id="casos-uso" className="py-16 lg:py-24" style={{ backgroundColor: '#F5F7FA' }}>
+    <section
+      id="casos-uso"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-16 lg:py-24"
+      style={{ backgroundColor: '#F5F7FA' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          className="font-space-grotesk font-bold text-center text-3xl lg:text-4xl mb-12"
-          style={{ color: '#111111' }}
+          className="font-space-grotesk font-bold text-center text-3xl lg:text-4xl mb-12 transition-all duration-700"
+          style={{
+            color: '#111111',
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
         >
           Qué puedo automatizar
         </h2>
@@ -40,10 +52,20 @@ const CasosUso = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col gap-5 p-6 bg-white transition-shadow duration-300 hover:shadow-xl"
+                className="flex flex-col gap-5 p-6 bg-white transition-all duration-300 hover:shadow-xl"
                 style={{
                   borderRadius: '16px',
-                  boxShadow: '0 2px 16px 0 rgba(17,17,17,0.07)'
+                  boxShadow: '0 2px 16px 0 rgba(17,17,17,0.07)',
+                  border: '1.5px solid transparent',
+                  opacity: inView ? 1 : 0,
+                  transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                  transitionDelay: inView ? `${index * 100}ms` : '0ms',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = '#5B5BD6';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = 'transparent';
                 }}
               >
                 <div

@@ -1,9 +1,13 @@
 import { Linkedin, GraduationCap } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 export default function QuienSoy() {
+  const { ref, inView } = useInView();
+
   return (
     <section
       id="sobre-mi"
+      ref={ref}
       className="py-20 px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: '#1E2140' }}
     >
@@ -12,7 +16,13 @@ export default function QuienSoy() {
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
 
           {/* Left column: photo */}
-          <div className="flex-shrink-0 flex justify-center">
+          <div
+            className="flex-shrink-0 flex justify-center transition-all duration-700"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? 'translateY(0)' : 'translateY(32px)',
+            }}
+          >
             <div
               className="rounded-full overflow-hidden"
               style={{
@@ -31,7 +41,13 @@ export default function QuienSoy() {
           </div>
 
           {/* Right column: text */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 flex-1">
+          <div
+            className="flex flex-col items-center md:items-start text-center md:text-left gap-4 flex-1 transition-all duration-700 delay-150"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? 'translateY(0)' : 'translateY(32px)',
+            }}
+          >
 
             {/* Name */}
             <h2

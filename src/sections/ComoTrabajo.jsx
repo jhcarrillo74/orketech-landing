@@ -1,4 +1,5 @@
 import { Map, Lightbulb, Layout, Code2, TrendingUp } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const steps = [
   {
@@ -34,16 +35,24 @@ const steps = [
 ];
 
 export default function ComoTrabajo() {
+  const { ref, inView } = useInView();
+
   return (
     <section
       id="como-trabajo"
+      ref={ref}
       style={{ backgroundColor: '#F5F7FA' }}
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
         <h2
-          className="text-4xl sm:text-5xl font-bold text-center mb-16 tracking-tight"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#111111' }}
+          className="text-4xl sm:text-5xl font-bold text-center mb-16 tracking-tight transition-all duration-700"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            color: '#111111',
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
         >
           Cómo trabajo
         </h2>
@@ -61,10 +70,18 @@ export default function ComoTrabajo() {
           />
 
           <div className="grid grid-cols-5 gap-4">
-            {steps.map((step) => {
+            {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={step.number} className="flex flex-col items-center text-center">
+                <div
+                  key={step.number}
+                  className="flex flex-col items-center text-center transition-all duration-700"
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                    transitionDelay: inView ? `${index * 100}ms` : '0ms',
+                  }}
+                >
                   {/* Icon above circle */}
                   <div
                     className="w-10 h-10 flex items-center justify-center rounded-full mb-3 relative z-10"
@@ -110,10 +127,18 @@ export default function ComoTrabajo() {
           />
 
           <div className="flex flex-col gap-8">
-            {steps.map((step) => {
+            {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div key={step.number} className="flex items-start gap-6 pl-0">
+                <div
+                  key={step.number}
+                  className="flex items-start gap-6 pl-0 transition-all duration-700"
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                    transitionDelay: inView ? `${index * 100}ms` : '0ms',
+                  }}
+                >
                   {/* Left: circle node */}
                   <div className="flex flex-col items-center flex-shrink-0" style={{ width: '48px' }}>
                     <div

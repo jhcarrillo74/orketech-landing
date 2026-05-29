@@ -1,6 +1,9 @@
 import { RefreshCw, Clock, AlertTriangle, Unlink } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const Problema = () => {
+  const { ref, inView } = useInView();
+
   const problemas = [
     {
       icon: RefreshCw,
@@ -21,10 +24,20 @@ const Problema = () => {
   ];
 
   return (
-    <section id="problema" className="py-16 lg:py-24 bg-[#F5F7FA]">
+    <section
+      id="problema"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-16 lg:py-24 bg-[#F5F7FA]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título */}
-        <h2 className="font-space-grotesk font-bold text-[#111111] text-3xl lg:text-4xl mb-12 text-center">
+        <h2
+          className="font-space-grotesk font-bold text-[#111111] text-3xl lg:text-4xl mb-12 text-center transition-all duration-700"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
+        >
           ¿Te suena familiar?
         </h2>
 
@@ -33,7 +46,19 @@ const Problema = () => {
           {problemas.map((problema, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+              className="bg-white rounded-2xl p-6 shadow-sm flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl"
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                transitionDelay: inView ? `${index * 100}ms` : '0ms',
+                border: '1.5px solid transparent',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = '#5B5BD6';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = 'transparent';
+              }}
             >
               <problema.icon className="w-12 h-12 text-primary mb-4" />
               <p className="text-text-secondary text-base leading-relaxed">

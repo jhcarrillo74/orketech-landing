@@ -1,3 +1,5 @@
+import { useInView } from '../hooks/useInView';
+
 const egloProject = {
   cliente: 'Eglo',
   sector: 'Retail',
@@ -50,24 +52,36 @@ const compactProjects = [
 ];
 
 export default function Proyectos() {
+  const { ref, inView } = useInView();
+
   return (
     <section
       id="proyectos"
+      ref={ref}
       style={{ backgroundColor: '#1E2140' }}
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <h2
-          className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 tracking-tight"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 tracking-tight transition-all duration-700"
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
         >
           Proyectos realizados
         </h2>
 
         {/* Card destacada Eglo */}
         <div
-          className="relative bg-white rounded-2xl p-8 sm:p-10 mb-10 overflow-hidden"
-          style={{ border: '2px solid #5B5BD6' }}
+          className="relative bg-white rounded-2xl p-8 sm:p-10 mb-10 overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_rgba(91,91,214,0.22)]"
+          style={{
+            border: '2px solid #5B5BD6',
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+            transitionDelay: inView ? '100ms' : '0ms',
+          }}
         >
           <div className="flex flex-col sm:flex-row sm:items-start gap-6">
             <div className="flex-1">
@@ -116,13 +130,22 @@ export default function Proyectos() {
 
         {/* Grid 8 cards compactas */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {compactProjects.map((project) => (
+          {compactProjects.map((project, index) => (
             <div
               key={project.cliente}
-              className="rounded-xl p-6 flex flex-col gap-2 transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-xl p-6 flex flex-col gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(91,91,214,0.18)]"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.065)',
                 border: '1px solid rgba(255,255,255,0.1)',
+                opacity: inView ? 1 : 0,
+                transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                transitionDelay: inView ? `${200 + index * 60}ms` : '0ms',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = '#5B5BD6';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
               }}
             >
               <div className="flex items-start justify-between gap-2 mb-1">

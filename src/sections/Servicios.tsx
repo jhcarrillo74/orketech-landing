@@ -1,4 +1,5 @@
 import { Workflow, GitMerge, BarChart2, Globe, Users } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 const servicios = [
   {
@@ -29,10 +30,22 @@ const servicios = [
 ];
 
 const Servicios = () => {
+  const { ref, inView } = useInView();
+
   return (
-    <section id="servicios" className="py-16 lg:py-24 bg-[#1E2140]">
+    <section
+      id="servicios"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-16 lg:py-24 bg-[#1E2140]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-space-grotesk font-bold text-white text-3xl lg:text-4xl mb-12 text-center">
+        <h2
+          className="font-space-grotesk font-bold text-white text-3xl lg:text-4xl mb-12 text-center transition-all duration-700"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
+        >
           Servicios
         </h2>
 
@@ -42,8 +55,13 @@ const Servicios = () => {
             return (
               <div
                 key={index}
-                className="group relative flex flex-col gap-4 p-6 rounded-2xl border border-white/20 bg-white/[0.06] transition-all duration-300 hover:border-[#5B5BD6] hover:bg-white/[0.10] cursor-default"
-                style={{ borderRadius: '16px' }}
+                className="group relative flex flex-col gap-4 p-6 rounded-2xl border border-white/20 bg-white/[0.06] transition-all duration-300 hover:border-[#5B5BD6] hover:bg-white/[0.10] hover:shadow-[0_8px_32px_rgba(91,91,214,0.18)] cursor-default"
+                style={{
+                  borderRadius: '16px',
+                  opacity: inView ? 1 : 0,
+                  transform: inView ? 'translateY(0)' : 'translateY(32px)',
+                  transitionDelay: inView ? `${index * 80}ms` : '0ms',
+                }}
               >
                 <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/10 text-white group-hover:bg-[#5B5BD6]/20 transition-colors duration-300">
                   <Icono size={22} strokeWidth={1.8} />

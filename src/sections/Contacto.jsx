@@ -1,16 +1,26 @@
 import { Mail, Linkedin } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
 
 export default function Contacto() {
+  const { ref, inView } = useInView();
+
   return (
     <section
       id="contacto"
+      ref={ref}
       className="py-20 px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: '#F5F7FA' }}
     >
       <div className="max-w-xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-10">
+        <div
+          className="text-center mb-10 transition-all duration-700"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
+        >
           <h2
             className="mb-3"
             style={{
@@ -39,7 +49,11 @@ export default function Contacto() {
           action="mailto:jhcarrillo@orketech.com"
           method="get"
           encType="text/plain"
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-4 transition-all duration-700 delay-100"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
         >
           <div className="flex flex-col gap-1">
             <label
@@ -131,7 +145,13 @@ export default function Contacto() {
         </form>
 
         {/* Contact links */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-8 border-t border-gray-200">
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-8 border-t border-gray-200 transition-all duration-700 delay-200"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? 'translateY(0)' : 'translateY(32px)',
+          }}
+        >
           <a
             href="mailto:jhcarrillo@orketech.com"
             className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70"
