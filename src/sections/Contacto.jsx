@@ -1,8 +1,16 @@
 import { Mail, Linkedin } from 'lucide-react';
+import { useEffect } from 'react';
 import { useInView } from '../hooks/useInView';
 
 export default function Contacto() {
   const { ref, inView } = useInView();
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://tally.so/widgets/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
 
   return (
     <section
@@ -12,8 +20,6 @@ export default function Contacto() {
       style={{ backgroundColor: '#F5F7FA' }}
     >
       <div className="max-w-xl mx-auto">
-
-        {/* Header */}
         <div
           className="text-center mb-10 transition-all duration-700"
           style={{
@@ -44,107 +50,32 @@ export default function Contacto() {
           </p>
         </div>
 
-        {/* Form */}
-        <form
-          action="mailto:jhcarrillo@orketech.com"
-          method="get"
-          encType="text/plain"
-          className="flex flex-col gap-4 transition-all duration-700 delay-100"
+        <div
+          className="transition-all duration-700 delay-100"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(32px)',
           }}
         >
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor="nombre"
-              className="text-sm font-medium"
-              style={{ fontFamily: "'Inter', sans-serif", color: '#374151' }}
-            >
-              Nombre
-            </label>
-            <input
-              id="nombre"
-              name="nombre"
-              type="text"
-              placeholder="Tu nombre"
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white text-sm outline-none transition-all"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                border: '1.5px solid #E2E8F0',
-                color: '#111111',
-              }}
-              onFocus={e => (e.target.style.borderColor = '#5B5BD6')}
-              onBlur={e => (e.target.style.borderColor = '#E2E8F0')}
-            />
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium"
-              style={{ fontFamily: "'Inter', sans-serif", color: '#374151' }}
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="tu@empresa.com"
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white text-sm outline-none transition-all"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                border: '1.5px solid #E2E8F0',
-                color: '#111111',
-              }}
-              onFocus={e => (e.target.style.borderColor = '#5B5BD6')}
-              onBlur={e => (e.target.style.borderColor = '#E2E8F0')}
-            />
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <label
-              htmlFor="mensaje"
-              className="text-sm font-medium"
-              style={{ fontFamily: "'Inter', sans-serif", color: '#374151' }}
-            >
-              Mensaje
-            </label>
-            <textarea
-              id="mensaje"
-              name="body"
-              rows={4}
-              placeholder="Cuéntame brevemente qué proceso quieres mejorar..."
-              required
-              className="w-full px-4 py-3 rounded-lg bg-white text-sm outline-none transition-all resize-none"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                border: '1.5px solid #E2E8F0',
-                color: '#111111',
-              }}
-              onFocus={e => (e.target.style.borderColor = '#5B5BD6')}
-              onBlur={e => (e.target.style.borderColor = '#E2E8F0')}
-            />
-          </div>
-
           <button
-            type="submit"
+            data-tally-open="MeMADI"
+            data-tally-overlay="1"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
             className="w-full py-3 rounded-lg text-white font-semibold text-sm transition-colors duration-200"
             style={{
               fontFamily: "'Inter', sans-serif",
               backgroundColor: '#5B5BD6',
+              cursor: 'pointer',
+              border: 'none',
             }}
             onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#4a4ab8')}
             onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#5B5BD6')}
           >
-            Enviar mensaje
+            Conversemos →
           </button>
-        </form>
+        </div>
 
-        {/* Contact links */}
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-8 border-t border-gray-200 transition-all duration-700 delay-200"
           style={{
@@ -172,7 +103,6 @@ export default function Contacto() {
             linkedin.com/in/carrillojorge
           </a>
         </div>
-
       </div>
     </section>
   );
