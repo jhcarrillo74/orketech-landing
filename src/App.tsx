@@ -5,6 +5,7 @@ import ComoFunciona from './sections/ComoFunciona';
 import PorQueYo from './sections/PorQueYo';
 import Servicios from './sections/Servicios';
 import CasosUso from './sections/CasosUso';
+import Proyectos from './sections/Proyectos';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <PorQueYo />
         <Servicios />
         <CasosUso />
+        <Proyectos />
       </main>
     </div>
   );
