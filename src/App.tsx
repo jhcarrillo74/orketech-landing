@@ -3,6 +3,7 @@ import Hero from './sections/Hero';
 import Problema from './sections/Problema';
 import ComoFunciona from './sections/ComoFunciona';
 import PorQueYo from './sections/PorQueYo';
+import Servicios from './sections/Servicios';
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
         <Problema />
         <ComoFunciona />
         <PorQueYo />
-        <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
-          <p className="text-text text-lg">Project base ready</p>
-        </div>
+        <Servicios />
       </main>
     </div>
   );
