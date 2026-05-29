@@ -58,10 +58,14 @@ export default function Contacto() {
           }}
         >
           <button
-            data-tally-open="MeMADI"
-            data-tally-overlay="1"
-            data-tally-emoji-text="👋"
-            data-tally-emoji-animation="wave"
+            onClick={() => {
+              if (window.Tally) {
+                window.Tally.openPopup('MeMADI', {
+                  overlay: true,
+                  emoji: { text: '👋', animation: 'wave' },
+                });
+              }
+            }}
             className="w-full py-3 rounded-lg text-white font-semibold text-sm transition-colors duration-200"
             style={{
               fontFamily: "'Inter', sans-serif",
