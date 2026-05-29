@@ -4,6 +4,7 @@ import Problema from './sections/Problema';
 import ComoFunciona from './sections/ComoFunciona';
 import PorQueYo from './sections/PorQueYo';
 import Servicios from './sections/Servicios';
+import CasosUso from './sections/CasosUso';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ComoFunciona />
         <PorQueYo />
         <Servicios />
+        <CasosUso />
       </main>
     </div>
   );
