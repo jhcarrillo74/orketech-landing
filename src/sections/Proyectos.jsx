@@ -12,42 +12,42 @@ const compactProjects = [
   {
     cliente: 'RentaFact',
     sector: 'Finanzas',
-    descripcion: 'Automatización de facturación y gestión de rentas con flujos inteligentes.',
+    descripcion: 'Aplicación para control de flujos de dinero en operaciones de factoring.',
   },
   {
     cliente: 'Loop Seguros',
     sector: 'Seguros',
-    descripcion: 'Plataforma de cotización y emisión de pólizas con integración multiaseguradora.',
+    descripcion: 'Evaluación técnica y funcional de plataforma digital, identificando brechas de escalabilidad.',
   },
   {
     cliente: 'MoneyFy',
     sector: 'Fintech',
-    descripcion: 'App de gestión financiera personal con análisis de gastos y metas de ahorro.',
+    descripcion: 'Evaluación técnica y funcional de plataforma digital, identificando brechas para salida a producción.',
   },
   {
     cliente: 'Grupo Alianza',
     sector: 'Medioambiente',
-    descripcion: 'Sistema de monitoreo y reporte de indicadores medioambientales en tiempo real.',
+    descripcion: 'Modelo predictivo para clasificación automatizada de normativa ambiental.',
   },
   {
     cliente: 'Max Service',
     sector: 'Industrial',
-    descripcion: 'Gestión de órdenes de servicio técnico y mantenimiento preventivo industrial.',
+    descripcion: 'Modelo de predicción de demanda para empresa de artículos de seguridad industrial.',
   },
   {
     cliente: 'Banco Falabella',
     sector: 'Banca',
-    descripcion: 'Automatización de procesos de onboarding y validación documental de clientes.',
+    descripcion: 'Piloto de chatbot IA para soporte interno del área de operaciones.',
   },
   {
     cliente: 'Hospifarma',
     sector: 'Salud',
-    descripcion: 'Control de inventario farmacéutico hospitalario con alertas de stock crítico.',
+    descripcion: 'Aplicación con IA para estimación automática de órdenes de compra.',
   },
   {
     cliente: 'Redda',
     sector: 'Salud mental',
-    descripcion: 'Plataforma de seguimiento terapéutico y conexión paciente-profesional.',
+    descripcion: 'Plataforma con IA para transcripción de sesiones y generación de informes clínicos.',
   },
 ];
 
