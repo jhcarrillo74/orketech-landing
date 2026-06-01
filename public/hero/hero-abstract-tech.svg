@@ -1,0 +1,104 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="180" y1="60" x2="1420" y2="860" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070A1F"/>
+      <stop offset="0.5" stop-color="#0E1440"/>
+      <stop offset="1" stop-color="#0A1233"/>
+    </linearGradient>
+
+    <radialGradient id="auroraA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(470 180) rotate(25) scale(520 300)">
+      <stop stop-color="#4B6BFF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#4B6BFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="auroraB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1140 680) rotate(-18) scale(620 330)">
+      <stop stop-color="#2ED8FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#2ED8FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#96A8FF"/>
+      <stop offset="1" stop-color="#4D65EE"/>
+    </linearGradient>
+
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6C83FF" stop-opacity="0.05"/>
+      <stop offset="0.5" stop-color="#A0B2FF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#6C83FF" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="flow2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#32D8FF" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#8D9FFF" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <filter id="nodeGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#auroraA)"/>
+  <rect width="1600" height="900" fill="url(#auroraB)"/>
+
+  <!-- orbital layers = orchestration -->
+  <g opacity="0.35">
+    <ellipse cx="800" cy="450" rx="540" ry="250" stroke="url(#ring)" stroke-width="1.5"/>
+    <ellipse cx="800" cy="450" rx="420" ry="185" stroke="url(#ring)" stroke-width="1.2"/>
+    <ellipse cx="800" cy="450" rx="305" ry="130" stroke="url(#ring)" stroke-width="1"/>
+  </g>
+
+  <!-- core orchestrator -->
+  <g filter="url(#nodeGlow)">
+    <circle cx="800" cy="450" r="46" fill="#1F2A78"/>
+    <circle cx="800" cy="450" r="30" fill="#7E92FF"/>
+    <circle cx="800" cy="450" r="15" fill="#D4DCFF"/>
+  </g>
+
+  <!-- technology nodes -->
+  <g>
+    <circle cx="390" cy="355" r="16" fill="#7F95FF"/>
+    <circle cx="520" cy="250" r="13" fill="#A9B8FF"/>
+    <circle cx="1180" cy="290" r="15" fill="#7F95FF"/>
+    <circle cx="1280" cy="465" r="14" fill="#9EB0FF"/>
+    <circle cx="1100" cy="660" r="16" fill="#80D8FF"/>
+    <circle cx="520" cy="650" r="14" fill="#9FB1FF"/>
+    <circle cx="360" cy="520" r="12" fill="#79CFFF"/>
+  </g>
+
+  <!-- orchestrated connections -->
+  <g opacity="0.8">
+    <path d="M406 355C520 355 620 390 754 435" stroke="url(#flow)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M533 252C640 290 700 340 770 420" stroke="url(#flow2)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M1165 290C1060 310 980 360 846 434" stroke="url(#flow)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M1266 465C1140 465 1000 455 846 449" stroke="url(#flow2)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M1084 659C1000 610 940 560 835 490" stroke="url(#flow)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M534 650C645 620 700 570 768 488" stroke="url(#flow2)" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M372 520C500 515 620 500 754 465" stroke="url(#flow)" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- data pulse accents -->
+  <g opacity="0.75">
+    <circle cx="620" cy="392" r="4" fill="#DDE4FF"/>
+    <circle cx="690" cy="357" r="3.6" fill="#A7B6FF"/>
+    <circle cx="938" cy="378" r="4" fill="#DDE4FF"/>
+    <circle cx="998" cy="456" r="3.6" fill="#9AD9FF"/>
+    <circle cx="734" cy="555" r="3.7" fill="#BFCBFF"/>
+  </g>
+
+  <!-- subtle grid traces -->
+  <g opacity="0.15" filter="url(#blurSoft)">
+    <path d="M220 760H1380" stroke="#8FA2FF" stroke-width="2"/>
+    <path d="M260 180H1340" stroke="#6E85FF" stroke-width="2"/>
+    <path d="M300 300H1240" stroke="#7394FF" stroke-width="2"/>
+    <path d="M340 620H1320" stroke="#6E85FF" stroke-width="2"/>
+  </g>
+</svg>
