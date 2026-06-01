@@ -14,6 +14,22 @@ Public URL pattern from the React app:
 /logo/<filename>
 ```
 
+
+## Master web document location
+
+The versioned master document also lives in the repo, outside `public/`, so it is tracked with the website source but is not served as a public static asset by the app:
+
+```text
+docs/master-document/Documento_Maestro_Web_Orketech_v5.2_2026-06-01.md
+docs/master-document/Documento_Maestro_Web_Orketech_v5.2_2026-06-01.pdf
+```
+
+Keep local archival copies in:
+
+```text
+/Users/jhcarrillo/Documents/Trabajo/Independiente/Orketech/Web/Historial_Documentos_Maestros/
+```
+
 ## Current production logo usage
 
 - Navbar on dark background: `/logo/Logo_1_Orketech_invertido.png`
