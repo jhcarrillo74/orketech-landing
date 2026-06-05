@@ -1,14 +1,19 @@
 import { useInView } from '../hooks/useInView';
 
 const egloProject = {
-  cliente: 'Eglo',
+  cliente: 'EGLO',
   sector: 'Retail',
-  titulo: 'Conciliación POS-ERP · Eglo · Retail',
-  descripcion: 'App con IA que concilia POS vs ERP automáticamente.',
-  badge: 'Ahorro: 5 días/analista por ciclo',
+  titulo: 'Conciliación POS-ERP · EGLO · Retail',
+  descripcion: 'Automatización de conciliación de abonos Mercado Pago / POS-ERP mediante Python, reduciendo un proceso manual de horas a minutos.',
+  badge: 'De horas a minutos',
 };
 
 const compactProjects = [
+  {
+    cliente: 'InData',
+    sector: 'Capacitación / Datos',
+    descripcion: 'Programa aplicado de IA para equipos, que derivó en 11 proyectos priorizados con Python, APIs de IA y conexiones externas.',
+  },
   {
     cliente: 'RentaFact',
     sector: 'Finanzas',
@@ -20,7 +25,7 @@ const compactProjects = [
     descripcion: 'Evaluación técnica y funcional de plataforma digital, identificando brechas de escalabilidad.',
   },
   {
-    cliente: 'MoneyFy',
+    cliente: 'Moneyfy',
     sector: 'Fintech',
     descripcion: 'Evaluación técnica y funcional de plataforma digital, identificando brechas para salida a producción.',
   },
@@ -42,7 +47,7 @@ const compactProjects = [
   {
     cliente: 'Hospifarma',
     sector: 'Salud',
-    descripcion: 'Aplicación con IA para estimación automática de órdenes de compra.',
+    descripcion: 'Motor Python para automatizar la confección y revisión de órdenes de compra, reduciendo el proceso de 2 horas a 10 minutos en piloto.',
   },
   {
     cliente: 'Redda',
@@ -62,18 +67,25 @@ export default function Proyectos() {
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-        <h2
-          className="text-4xl sm:text-5xl font-bold text-white text-center mb-16 tracking-tight transition-all duration-700"
+        <div
+          className="text-center mb-16 transition-all duration-700"
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(32px)',
           }}
         >
-          Proyectos realizados
-        </h2>
+          <h2
+            className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-4"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          >
+            Proyectos liderados por Jorge Carrillo
+          </h2>
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+            Casos de automatización, inteligencia artificial, integración de sistemas y mejora operacional desarrollados desde Orketech y colaboraciones asociadas.
+          </p>
+        </div>
 
-        {/* Card destacada Eglo */}
+        {/* Card destacada EGLO */}
         <div
           className="relative bg-white rounded-2xl p-8 sm:p-10 mb-10 overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_rgba(91,91,214,0.22)]"
           style={{
@@ -103,7 +115,7 @@ export default function Proyectos() {
               >
                 Conciliación POS-ERP
               </h3>
-              <p className="text-gray-500 font-medium mb-4 text-lg">Eglo</p>
+              <p className="text-gray-500 font-medium mb-4 text-lg">EGLO</p>
               <p className="text-gray-700 text-base sm:text-lg leading-relaxed max-w-2xl">
                 {egloProject.descripcion}
               </p>
