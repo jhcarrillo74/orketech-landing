@@ -17,8 +17,8 @@ const PorQueYo = () => {
       etiqueta: "Ventas digitales AFP Capital"
     },
     {
-      numero: "9 proyectos",
-      etiqueta: "Automatización con IA desde 2023"
+      numero: "10 casos",
+      etiqueta: "Automatización, IA y mejora operacional desde 2023"
     }
   ];
 
