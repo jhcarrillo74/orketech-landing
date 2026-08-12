@@ -1,15 +1,8 @@
+import { MICROSOFT_BOOKINGS_URL } from '../constants/booking';
 import { useInView } from '../hooks/useInView';
 
 const Hero = () => {
   const { ref, inView } = useInView(0.1);
-
-  const handleScrollToContact = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const element = document.querySelector('#contacto');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section
@@ -48,15 +41,17 @@ const Hero = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center">
-              <button
-                onClick={handleScrollToContact}
+              <a
+                href={MICROSOFT_BOOKINGS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary text-white font-medium px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 style={{ transition: 'background-color 0.2s, transform 0.3s, box-shadow 0.3s' }}
                 onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#4a4ab8')}
                 onMouseLeave={e => (e.currentTarget.style.backgroundColor = '')}
               >
-                Conversemos sobre tu operación
-              </button>
+                Agenda una reunión sin costo de 30 min
+              </a>
             </div>
           </div>
 

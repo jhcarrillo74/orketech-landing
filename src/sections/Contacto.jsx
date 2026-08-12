@@ -1,5 +1,6 @@
 import { Mail, Linkedin } from 'lucide-react';
 import { useState } from 'react';
+import { MICROSOFT_BOOKINGS_URL } from '../constants/booking';
 import { useInView } from '../hooks/useInView';
 
 export default function Contacto() {
@@ -63,6 +64,22 @@ export default function Contacto() {
             30 minutos para entender qué procesos están frenando tu empresa.
           </p>
         </div>
+
+        <a
+          href={MICROSOFT_BOOKINGS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-semibold text-white transition-colors duration-200"
+          style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#5B5BD6', marginBottom: '16px' }}
+          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#4a4ab8')}
+          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#5B5BD6')}
+        >
+          Agenda una reunión sin costo de 30 min
+        </a>
+
+        <p className="mb-4 text-center text-sm" style={{ fontFamily: "'Inter', sans-serif", color: '#666666' }}>
+          O envía un mensaje y te responderé dentro de un día hábil.
+        </p>
 
         {status === 'success' ? (
           <div
