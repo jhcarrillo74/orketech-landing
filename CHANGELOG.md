@@ -4,6 +4,19 @@ Todos los cambios relevantes de este proyecto se documentan aquí.
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.0.1] - 2026-08-12
+
+### Añadido
+- Política de privacidad pública en `/politica-de-privacidad`, preparada para formularios de generación de contactos de LinkedIn.
+- Enlace visible desde el pie de página a la política de privacidad.
+
+### Corregido
+- Navegación desde la política de privacidad hacia las secciones de la landing.
+- Logo del encabezado: ahora es legible y enlaza al inicio de Orketech.
+
+### Validación
+- Pruebas automatizadas de política, navegación y CTA de Microsoft Bookings.
+
 ## [1.0.0] - 2026-08-12
 
 ### Añadido
@@ -16,4 +29,5 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/
 ### Seguridad
 - Los enlaces a Microsoft Bookings abren en una nueva pestaña con `rel="noopener noreferrer"`.
 
+[1.0.1]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.1
 [1.0.0]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.0

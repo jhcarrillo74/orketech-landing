@@ -29,11 +29,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#1E2140' }}>
       <div className="max-w-6xl mx-auto px-6 py-16">
-
-        {/* Three columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
-
-          {/* Left: logo + tagline */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <img
               src="/logo/Logo_4_Orketech.png"
@@ -51,7 +47,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Center: nav links */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-1"
@@ -65,7 +60,7 @@ export default function Footer() {
             {navLinks.map(({ label, href }) => (
               <a
                 key={href}
-                href={href}
+                href={`/${href}`}
                 className="text-sm font-medium transition-colors duration-150"
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -80,7 +75,6 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Right: contact links */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-1"
@@ -111,26 +105,37 @@ export default function Footer() {
               </a>
             ))}
           </div>
-
         </div>
 
-        {/* Divider */}
         <hr
           className="my-10"
           style={{ borderColor: 'rgba(255,255,255,0.12)', borderTopWidth: 1 }}
         />
 
-        {/* Copyright */}
-        <p
-          className="text-center text-xs"
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            color: 'rgba(255,255,255,0.35)',
-          }}
-        >
-          © 2026 Orketech SpA · Santiago, Chile
-        </p>
-
+        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+          <p
+            className="text-center text-xs"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(255,255,255,0.35)',
+            }}
+          >
+            © 2026 Orketech SpA · Santiago, Chile
+          </p>
+          <a
+            href="/politica-de-privacidad"
+            className="text-xs transition-colors duration-150"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              color: 'rgba(255,255,255,0.55)',
+              textDecoration: 'none',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#ffffff')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
+          >
+            Política de privacidad
+          </a>
+        </div>
       </div>
     </footer>
   );

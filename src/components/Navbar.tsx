@@ -27,6 +27,8 @@ export default function Navbar() {
     }
   };
 
+  const isHomePage = window.location.pathname === '/';
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 bg-dark transition-shadow duration-300 ${
@@ -35,20 +37,31 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
+          <a
+            href="/"
+            className="flex flex-shrink-0 items-center gap-2 text-white hover:text-primary transition-colors duration-200"
+            aria-label="Ir al inicio de Orketech"
+          >
             <img
-              src="/logo/Logo_1_Orketech_invertido.png"
-              alt="Orketech Logo"
-              className="h-10"
+              src="/logo/Orketech_symbol_white.png"
+              alt=""
+              aria-hidden="true"
+              className="h-8 w-8"
             />
-          </div>
+            <span
+              className="text-xl font-bold tracking-tight"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              Orketech
+            </span>
+          </a>
 
           <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={isHomePage ? link.href : `/${link.href}`}
+                onClick={isHomePage ? (e) => handleNavClick(e, link.href) : undefined}
                 className="text-white font-medium hover:text-primary transition-colors duration-200"
               >
                 {link.label}
@@ -74,8 +87,8 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={isHomePage ? link.href : `/${link.href}`}
+                onClick={isHomePage ? (e) => handleNavClick(e, link.href) : undefined}
                 className="block text-white font-medium hover:text-primary transition-colors duration-200 py-2"
               >
                 {link.label}
