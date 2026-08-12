@@ -46,3 +46,10 @@ test('navbar logo is legible and links to the landing home', async () => {
   assert.match(navbar, /Orketech_symbol_white\.png/);
   assert.match(navbar, />\s*Orketech\s*<\/span>/);
 });
+
+test('Vercel rewrites direct public routes to the SPA entry point', async () => {
+  const config = JSON.parse(await source('vercel.json'));
+  assert.deepEqual(config.rewrites, [
+    { source: '/(.*)', destination: '/index.html' },
+  ]);
+});

@@ -6,6 +6,7 @@
 - [x] Agregar prueba focalizada para ruta y contenido mínimo.
 - [x] Ejecutar pruebas focalizadas y build de producción.
 - [x] Verificar la ruta en navegador local.
+- [x] Configurar rewrite de Vercel para que las rutas públicas directas resuelvan la aplicación SPA.
 
 ## Evidencia de validación
 
