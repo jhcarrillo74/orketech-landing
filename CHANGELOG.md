@@ -4,6 +4,14 @@ Todos los cambios relevantes de este proyecto se documentan aquí.
 
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado sigue [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.0.4] - 2026-08-14
+
+### Corregido
+- Se añadió la dependencia de tipos de Vercel requerida por la función de contacto (`api/contact.ts`), eliminando el error de compilación por `@vercel/node`.
+
+### Validación
+- Compilación específica de la función de contacto, pruebas de CTA y build de producción aprobados.
+
 ## [1.0.3] - 2026-08-14
 
 ### Corregido
@@ -42,6 +50,7 @@ El formato se basa en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/
 ### Seguridad
 - Los enlaces a Microsoft Bookings abren en una nueva pestaña con `rel="noopener noreferrer"`.
 
+[1.0.4]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.4
 [1.0.3]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.3
 [1.0.2]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.2
 [1.0.1]: https://github.com/jhcarrillo74/orketech-landing/releases/tag/v1.0.1
