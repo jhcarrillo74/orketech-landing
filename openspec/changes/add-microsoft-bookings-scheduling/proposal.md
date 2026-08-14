@@ -11,7 +11,7 @@ Incorporar Microsoft Bookings como la ruta principal de agendamiento de una reun
 - Añadir un CTA de agendamiento en la sección Contacto, sin eliminar el formulario actual.
 - Abrir Bookings en una pestaña nueva y aplicar protección `noopener noreferrer`.
 - Usar el enlace público verificado:
-  `https://outlook.office.com/bookwithme/user/7cb24523f73846c6a63c62ad95369a27@orketech.com/meetingtype/Nu8D66Mg20OZBPT4xUgzOA2?anonymous`
+  `https://outlook.office.com/book/Orketech@orketech.com/s/xZhlFM50qku7YcXiAq2AKg2`
 
 ## Flujo esperado
 1. El visitante selecciona “Agenda una reunión sin costo de 30 min”.
