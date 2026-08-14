@@ -1,4 +1,7 @@
 import { Mail, Linkedin } from 'lucide-react';
+import version from '../../VERSION?raw';
+
+const siteVersion = version.trim();
 
 const navLinks = [
   { label: 'Servicios', href: '#servicios' },
@@ -120,7 +123,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.35)',
             }}
           >
-            © 2026 Orketech SpA · Santiago, Chile
+            © 2026 Orketech SpA · Santiago, Chile · Versión {siteVersion}
           </p>
           <a
             href="/politica-de-privacidad"
